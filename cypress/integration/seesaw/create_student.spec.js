@@ -37,7 +37,6 @@ describe('Creation of a Student in the Seesaw Application', function () {
             userToken = data.body.response.user_token;
             expect(data.status).to.eq(200);
             expect(data.body.response.person.display_name).to.eq(schoolAdminData.adminName);
-            // cy.log(JSON.stringify(data));
         })
     })
 
@@ -55,7 +54,6 @@ describe('Creation of a Student in the Seesaw Application', function () {
             let studentListTotal = data.body.response.students.length;
             cy.wrap(studentListTotal).should('be.gt', 0);
             expect(data.status).to.eq(200);
-            // cy.log(JSON.stringify(data.body.response.students));
         })
     })
 
@@ -79,11 +77,10 @@ describe('Creation of a Student in the Seesaw Application', function () {
             expect(data.status).to.eq(200)
             expect(data.body.response.student.display_name).to.eq(studentFullName);
             expect(data.body.response.student.email.toUpperCase()).to.eq(studentData.email.toUpperCase());
-            // cy.log(JSON.stringify(data.body))
         })
     })
 
-    it('Should be NOT be able to create a new student if an invalid Org ID is passed', () => {
+    it('Should NOT be able to create a new student if an invalid Org ID is passed', () => {
         cy.request({
             method: 'POST',
             url: BASEURL + '/org/create_org_student',
