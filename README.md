@@ -25,7 +25,7 @@ npm run cy:open
 	
 And wait for it to populate the console.  From there, you can either run each test on it's own, or run all tests available.  Though we are not testing any UI automation, one of the other great features of Cypress is that you can also choose from the selection of browsers that are currently available on your machine that are compatible.
 
-To run a test from the command line, while you're in the "zwift" directory, run:
+To run a test from the command line, while you're in the "seesawAssessment" directory, run:
 ```
 npm run cy:run
 ```
